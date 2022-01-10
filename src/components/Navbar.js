@@ -38,21 +38,7 @@ function Navbar() {
                     Trending
                 </NavItem>
             </NavItemWrap>
-            <NavItemWrap>
-                <NavItem>
-                    Netflix
-                </NavItem>
-            </NavItemWrap>
-            <NavItemWrap>
-                <NavItem>
-                    Hulu
-                </NavItem>
-            </NavItemWrap>
-            <NavItemWrap>
-                <NavItem>
-                    @Threater
-                </NavItem>
-            </NavItemWrap>
+
         </NavContainer>
     )
 }
