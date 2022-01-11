@@ -31,6 +31,7 @@ function Row({ title, fetchURL }) {
 
     const [movies, setMovies] = useState([])
     const [movie, setMovie] = useState("")
+
     useEffect(() => {
         const fetchData = async () => {
             const request = await axios.get(fetchURL)
@@ -40,6 +41,10 @@ function Row({ title, fetchURL }) {
         fetchData()
     }, [fetchURL])
 
+    const handleClick = (id) => {
+        setMovie(id)
+    }
+
     return (<>
         <h1 style={{ fontSize: "60px", fontWeight: "bold", margin: "10px 20px" }}>{title}</h1>
         <RowContainer>
@@ -47,10 +52,11 @@ function Row({ title, fetchURL }) {
             {movies.map(movie => {
                 return (
                     <RowItem key={movie.id}>
-                        <img src={`${ImageURL}${movie.poster_path}`} alt={`${movie.name}`} style={{ height: "150px", margin: "10px" }} />
+                        <img src={`${ImageURL}${movie.poster_path}`} alt={`${movie.name}`} style={{ height: "150px", margin: "10px" }} onClick={() => { handleClick(movie.id) }} />
                     </RowItem>
                 )
             })}
+
         </RowContainer>
     </>
 
